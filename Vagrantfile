@@ -70,8 +70,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # Create a forwarded port mapping which allows access to a specific port
   config.vm.network "forwarded_port", guest: 80, host: 8000
 
-  # Share a folder to the guest VM.
-  config.vm.synced_folder "./www", "/var/www/"
+  # Share folders to the guest VM.
+  config.vm.synced_folder "www", "/var/www/wpkit.dev", owner: "www-data", group: "www-data"
 
   # Install software for VM
   config.vm.provision "ansible" do |ansible|

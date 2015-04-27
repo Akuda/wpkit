@@ -7,6 +7,7 @@ Wordpress Setup with Vagrant
 
 NOTE: This is a development tool only. Do not sue this as a production server.
 
+Vagrant 1.7.2
 vagrant plugin install vagrant-hostsupdater
 vagrant plugin install vagrant-cachier
 sudo easy_install pip
@@ -22,3 +23,4 @@ VVV
 Tutorial
 https://github.com/ansible/ansible-examples
 https://github.com/jalefkowit/vagrant-ansible-wordpress
+https://github.com/Servers-for-Hackers/ansible-nginx
