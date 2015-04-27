@@ -1,6 +1,6 @@
 # wpkit - 0.0.1
 
-* Source: [github.com/akuda/fedkit](http://github.com/akuda/fedkit)
+* Source: [github.com/akuda/wpkit](http://github.com/akuda/wpkit)
 * Author: [Phil Lennon](http://akuda.co.uk)
 * Twitter: [@PJL101](http://twitter.com/pjl101)
 
