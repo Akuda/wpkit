@@ -1,26 +1,31 @@
-# wpkit
-## Version 0.0.1
+# wpkit - 0.0.1
 
-Wordpress Setup with Vagrant
+* Source: [github.com/akuda/fedkit](http://github.com/akuda/fedkit)
+* Author: [Phil Lennon](http://akuda.co.uk)
+* Twitter: [@PJL101](http://twitter.com/pjl101)
 
-## NOTE: This project is on the develop branch until the first version is released
+-
 
-NOTE: This is a development tool only. Do not sue this as a production server.
+Easy Wordpress Setup with Vagrant, Ansible, MariaDB, Nginx & PHP 5.5
 
-Vagrant 1.7.2
-vagrant plugin install vagrant-hostsupdater
-vagrant plugin install vagrant-cachier
-sudo easy_install pip
-sudo pip install ansible
+NOTE: This is a development tool only. Do not use this for a production server at this time.
 
-On first run, vm needs to download so will take longer
+NOTE: This has not been tested with Parallels or VirtualBox at this time.
 
-Not tested on parallels or virtualbox yet
+## First time install
 
-Credit:
+* Install Vagrant 1.7.2
+* In terminal, run `vagrant plugin install vagrant-hostsupdater`
+* Then run `vagrant plugin install vagrant-cachier`
+* Then `sudo easy_install pip`
+* Finally, `sudo pip install ansible`
 
-VVV
-Tutorial
-https://github.com/ansible/ansible-examples
-https://github.com/jalefkowit/vagrant-ansible-wordpress
-https://github.com/Servers-for-Hackers/ansible-nginx
+On first run, the virtual machine and packages need to download so the first build will take longer. The files are cached after this.
+
+## Credit
+
+* VVV
+* Tutorial
+* https://github.com/ansible/ansible-examples
+* https://github.com/jalefkowit/vagrant-ansible-wordpress
+* https://github.com/Servers-for-Hackers/ansible-nginx
