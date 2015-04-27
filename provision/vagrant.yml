@@ -1,0 +1,7 @@
+- name: Install MySQL, Nginx, and PHP-FPM
+  hosts: all
+
+  roles:
+    - mysql
+    - nginx
+    - php-fpm

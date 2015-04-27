@@ -1,0 +1,10 @@
+---
+- name: Install nginx
+  sudo: yes
+  apt: pkg=nginx state=present update_cache=yes
+
+- name: Copy nginx config
+  sudo: yes
+  copy: src=nginx-default dest=/etc/nginx/sites-available/default force=yes
+  notify:
+      - Restart nginx

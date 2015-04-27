@@ -1,0 +1,21 @@
+---
+- name: Install Mysql and dependences
+  sudo: yes
+  apt: pkg={{ item }} state=present update_cache=yes
+  with_items:
+    - mysql-server
+    - python-mysqldb # Required for Ansible to interact with MySQL
+
+- name: Create Database
+  sudo: yes
+  mysql_db: name={{ db_name }}
+
+- name: Create User
+  sudo: yes
+  mysql_user: name={{ db_user }} password={{ db_password }} state=present
+
+- name: Provide user with DB permissions
+  sudo: yes
+  mysql_user: user={{ db_user }} priv={{ db_name }}.*:ALL
+  notify:
+  - Restart mysql

@@ -1,0 +1,7 @@
+---
+- name: Install php-fpm and dependences
+  sudo: yes
+  apt: pkg={{ item }} state=present update_cache=yes
+  with_items:
+    - php5-mysql
+    - php5-fpm

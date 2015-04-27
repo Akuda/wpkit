@@ -1,0 +1,18 @@
+server {
+  listen                  80 default_server;
+  server_name             www.wpkit.dev;
+  root                    /var/www/ ;
+  client_max_body_size    64M;
+
+  location / {
+          index index.php index.html index.htm;
+          try_files $uri $uri/ /index.php?$args;
+  }
+
+  # pass the PHP scripts to FastCGI server listening on 127.0.0.1:9000
+  location ~ \.php$ {
+    fastcgi_pass 127.0.0.1:9000;
+    fastcgi_index index.php;
+    include fastcgi_params;
+  }
+}
