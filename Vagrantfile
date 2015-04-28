@@ -77,4 +77,20 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.provision "ansible" do |ansible|
     ansible.playbook = "provision/vagrant.yml"
   end
+
+  # Vagrant Triggers
+  #
+  # If the vagrant-triggers plugin is installed, we can run various scripts on Vagrant
+  # state changes like `vagrant up`, `vagrant halt`, `vagrant suspend`, and `vagrant destroy`
+  # if defined? VagrantPlugins::Triggers
+  #  config.trigger.before :halt, :stdout => true do
+  #    run "vagrant ssh -c 'vagrant_halt'"
+  #  end
+  # config.trigger.before :suspend, :stdout => true do
+  #    run "vagrant ssh -c 'vagrant_suspend'"
+  #  end
+  #  config.trigger.before :destroy, :stdout => true do
+  #    run "vagrant ssh -c 'vagrant_destroy'"
+  #  end
+  # end
 end
