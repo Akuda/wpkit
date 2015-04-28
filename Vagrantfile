@@ -71,7 +71,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.network "forwarded_port", guest: 80, host: 8000
 
   # Share folders to the guest VM.
-  config.vm.synced_folder "www", "/var/www/wpkit.dev", owner: "www-data", group: "www-data"
+  config.vm.synced_folder "www", "/server/www/wpkit.dev", owner: "www-data", group: "www-data"
+  config.vm.synced_folder "log/", "/server/log", :owner => "www-data"
 
   # Install software for VM
   config.vm.provision "ansible" do |ansible|

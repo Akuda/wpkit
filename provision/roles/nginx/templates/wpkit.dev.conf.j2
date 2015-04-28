@@ -2,11 +2,11 @@ server {
     listen 80;
     server_name wpkit.dev www.wpkit.dev;
 
-    root /var/www/wpkit.dev;
+    root /server/www/wpkit.dev;
     index index.html index.htm index.php;
 
-    # access_log /var/log/nginx/wpkit.dev.log;
-    # error_log  /var/log/nginx/wpkit.dev-error.log error;
+    access_log /server/log/wpkit.dev.log;
+    error_log  /server/log/wpkit.dev-error.log error;
 
     charset utf-8;
 
