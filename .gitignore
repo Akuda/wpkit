@@ -12,6 +12,7 @@ Thumbs.db
 # wpkit #
 ######################
 .vagrant
+log/*.log
 
 # Development #
 ######################
@@ -20,4 +21,4 @@ Thumbs.db
 
 # Project Specific #
 ######################
-log/*.log
+
