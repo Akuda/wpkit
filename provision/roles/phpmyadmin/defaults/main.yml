@@ -1,0 +1,29 @@
+---
+
+# Should PHPMyAdmin role manage its own dependencies?
+phpmyadmin_dependencies: True
+
+# What subdomain should be used for PHPMyAdmin in nginx configuration
+phpmyadmin_domain: [ 'phpmyadmin.wpkit.dev' ]
+
+# Default length of generated passwords
+phpmyadmin_password_length: '5'
+
+phpmyadmin_control_user: "phpmyadmin"
+
+# Default PHPMyAdmin control password
+phpmyadmin_control_password: "phpmyadmin"
+
+phpmyadmin_control_database: "phpmyadmin"
+
+# List of IP addresses or network ranges in CIDR format, allowed to access
+# PHPMyAdmin. Leave empty to allow access from all IP addresses/networks
+phpmyadmin_allow: []
+
+# Max upload size for nginx and php5
+phpmyadmin_upload_size: '64M'
+
+# Maximum number of PHP5 processes for PHPMyAdmin
+phpmyadmin_php5_max_children: '20'
+
+

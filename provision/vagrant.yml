@@ -1,7 +1,8 @@
-- name: Install MySQL, Nginx, and PHP-FPM
+- name: Install server dependences
   hosts: all
 
   roles:
     - mysql
     - nginx
     - php-fpm
+    - phpmyadmin

@@ -1,0 +1,40 @@
+---
+
+- name: Install dbconfig-common
+  sudo: yes
+  apt: pkg=dbconfig-common state=latest install_recommends=no
+
+- name: Pre-configure PHPMyAdmin database
+  sudo: yes
+  template: src=etc/dbconfig-common/phpmyadmin.conf.j2
+            dest=/etc/dbconfig-common/phpmyadmin.conf
+            owner=root group=root mode=0600
+
+- name: Install PHPMyAdmin packages
+  sudo: yes
+  apt: pkg=phpmyadmin state=latest install_recommends=no
+
+- name: Create database for PHPMyAdmin
+  sudo: yes
+  mysql_db: name={{ phpmyadmin_control_database | default('phpmyadmin') }} state=present
+  register: phpmyadmin_database
+
+- name: Import PHPMyAdmin schema
+  sudo: yes
+  mysql_db: name={{ phpmyadmin_control_database | default('phpmyadmin') }} state=import
+            target=/usr/share/doc/phpmyadmin/examples/create_tables.sql.gz
+  when: phpmyadmin_database is defined and phpmyadmin_database.changed == True
+
+- name: Create PHPMyAdmin control user
+  sudo: yes
+  mysql_user: name={{ phpmyadmin_control_user | default('phpmyadmin') }} state=present password={{ phpmyadmin_control_password }} priv='{{ phpmyadmin_control_database | default('phpmyadmin') }}.*:ALL'
+
+- name: Enable Site Config
+  sudo: yes
+  file: path=/server/www/wpkit.dev/phpmyadmin src=/usr/share/phpmyadmin state=link
+  register: phpmyadmin_link
+
+- name: Reload nginx
+  sudo: yes
+  when: phpmyadmin_link.changed == True
+  service: name=nginx state=reloaded
