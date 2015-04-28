@@ -8,3 +8,7 @@
     - php5-memcache
     - php5-imagick
     - php5-mcrypt
+
+- name: Enable mcrypt module
+  sudo: yes
+  command: "php5enmod mcrypt"
