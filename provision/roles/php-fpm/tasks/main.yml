@@ -12,4 +12,7 @@
 - name: Enable mcrypt module
   sudo: yes
   command: "php5enmod mcrypt"
-  service: name=nginx state=reloaded
+
+- name: Restart php
+  sudo: yes
+  command: "restart php5-fpm"
