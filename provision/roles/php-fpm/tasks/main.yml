@@ -5,3 +5,6 @@
   with_items:
     - php5-mysql
     - php5-fpm
+    - php5-memcache
+    - php5-imagick
+    - php5-mcrypt
