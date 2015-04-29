@@ -28,6 +28,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     v.vmx["numvcpus"] = "2"
   end
 
+  # Set a global clone directory, so we can exclude from Time Machine
+  ENV['VAGRANT_VMWARE_CLONE_DIRECTORY'] = '~/.vagrant-machines'
+
   # VM OS - Ubuntu 14.04 x64
   config.vm.box = "ubuntu/trusty64"
 
@@ -65,7 +68,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   # VM Hostname & network (with hostsupdater)
   config.vm.network :private_network, ip: "192.168.3.10"
-  config.vm.hostname = "www.wpkit.dev"
+  config.vm.hostname = "wpkit.dev"
 
   # Create a forwarded port mapping which allows access to a specific port
   config.vm.network "forwarded_port", guest: 80, host: 8000
