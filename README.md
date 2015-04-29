@@ -25,6 +25,11 @@ NOTE: This has not been tested with Windows, Parallels or VirtualBox at this tim
 
 On first run, the virtual machine and packages need to download so the first build will take longer. The files are cached after this.
 
+## Default web addresses
+
+* http://wpkit.dev
+* http://wpkit.dev/phpmyadmin
+
 ## Credit
 
 * https://github.com/Varying-Vagrant-Vagrants/VVV
