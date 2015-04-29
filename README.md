@@ -1,4 +1,4 @@
-# wpkit - 0.0.3
+# wpkit - 0.0.4
 
 * Source: [github.com/akuda/wpkit](http://github.com/akuda/wpkit)
 * Author: [Phil Lennon](http://akuda.co.uk)

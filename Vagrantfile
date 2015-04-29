@@ -1,7 +1,7 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
-# wpkit version: 0.0.3
+# wpkit version: 0.0.4
 
 # Vagrantfile API/syntax version. Don't touch unless you know what you're doing!
 VAGRANTFILE_API_VERSION = "2"
@@ -69,6 +69,11 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # VM Hostname & network (with hostsupdater)
   config.vm.network :private_network, ip: "192.168.3.10"
   config.vm.hostname = "wpkit.dev"
+
+  # Local Machine Hosts
+  if defined?(VagrantPlugins::HostsUpdater)
+    config.hostsupdater.remove_on_suspend = true
+  end
 
   # Create a forwarded port mapping which allows access to a specific port
   config.vm.network "forwarded_port", guest: 80, host: 8000
