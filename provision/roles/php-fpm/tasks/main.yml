@@ -1,0 +1,18 @@
+---
+- name: Install php-fpm and dependences
+  sudo: yes
+  apt: pkg={{ item }} state=present update_cache=yes
+  with_items:
+    - php5-mysql
+    - php5-fpm
+    - php5-memcache
+    - php5-imagick
+    - php5-mcrypt
+
+- name: Enable mcrypt module
+  sudo: yes
+  command: "php5enmod mcrypt"
+
+- name: Restart php
+  sudo: yes
+  command: "restart php5-fpm"

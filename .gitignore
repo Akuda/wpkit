@@ -9,11 +9,10 @@ Icon?
 ehthumbs.db
 Thumbs.db
 
-# Boilerplate #
+# wpkit #
 ######################
-*node_modules/
-npm-debug.log
-*_dist/
+.vagrant
+log/*.log
 
 # Development #
 ######################
@@ -22,3 +21,4 @@ npm-debug.log
 
 # Project Specific #
 ######################
+

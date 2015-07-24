@@ -1,0 +1,27 @@
+server {
+    listen 80;
+    server_name wpkit.dev www.wpkit.dev;
+
+    root /server/www/wpkit.dev;
+    index index.html index.htm index.php;
+
+    access_log /server/log/wpkit.dev.log;
+    error_log  /server/log/wpkit.dev-error.log error;
+
+    charset utf-8;
+
+    client_max_body_size 20M;
+
+    location / {
+      index index.php index.html index.htm;
+      try_files $uri $uri/ /index.php?$args;
+    }
+
+    location ~ \.php$ {
+      fastcgi_split_path_info ^(.+\.php)(/.+)$;
+      fastcgi_pass unix:/var/run/php5-fpm.sock;
+      fastcgi_index index.php;
+      fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+      include fastcgi_params;
+    }
+}
