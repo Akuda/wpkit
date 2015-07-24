@@ -1,4 +1,4 @@
-# wpkit - 0.0.6
+# wpkit - 0.0.7
 
 * Author: [Phil Lennon](http://iampjl.co.uk)
 * Source: [github.com/PJL101/wpkit](http://github.com/PJL101/wpkit)
@@ -6,6 +6,8 @@
 * Email: [enquiry@iampjl.co.uk](mailto:enquiry@iampjl.co.uk)
 
 -
+
+# NOTE: This project is super early alpha. I'd suggest waiting for the first released version.
 
 Easy Wordpress Setup with Vagrant, Ansible, Ubuntu 14.04, mySQL, Nginx & PHP 5.5
 
