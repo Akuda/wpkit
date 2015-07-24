@@ -1,27 +1,29 @@
-# wpkit - 0.0.5
+# wpkit - 0.0.6
 
-* Source: [github.com/akuda/wpkit](http://github.com/akuda/wpkit)
-* Author: [Phil Lennon](http://akuda.co.uk)
+* Author: [Phil Lennon](http://iampjl.co.uk)
+* Source: [github.com/PJL101/wpkit](http://github.com/PJL101/wpkit)
 * Twitter: [@PJL101](http://twitter.com/pjl101)
+* Email: [enquiry@iampjl.co.uk](mailto:enquiry@iampjl.co.uk)
 
 -
 
-Easy Wordpress Setup with Vagrant, Ansible, mySQL, Nginx & PHP 5.5
+Easy Wordpress Setup with Vagrant, Ansible, Ubuntu 14.04, mySQL, Nginx & PHP 5.5
 
 NOTE: phpmyadmin is needed to import databases, auto import is not available yet.
 
 NOTE: This is a development tool only. Do not use this for a production server. Production server support will be looked into in the future.
 
-NOTE: This has not been tested with Windows, Parallels or VirtualBox at this time.
+NOTE: This has not been tested with Windows, Parallels or VMware Fusion at this time.
 
 ## First time install
 
-* Install Vagrant 1.7.2,
-* In terminal, run `vagrant plugin install vagrant-hostsupdater`,
-* Then run `vagrant plugin install vagrant-cachier`,
-* Then `vagrant plugin install vagrant-triggers`,
-* Then `sudo easy_install pip`,
-* Finally, `sudo pip install ansible`.
+* Install Vagrant 1.7.4,
+* In terminal, run: `vagrant plugin install vagrant-hostsupdater`,
+* Then run: `vagrant plugin install vagrant-cachier`,
+* Then: `vagrant plugin install vagrant-triggers`,
+* Then: `vagrant plugin install vagrant-vbguest`,
+* Then: `sudo easy_install pip`,
+* Finally: `sudo pip install ansible`.
 
 On first run, the virtual machine and packages need to download so the first build will take longer. The files are cached after this.
 

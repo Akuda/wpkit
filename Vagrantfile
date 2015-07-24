@@ -1,48 +1,25 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
-# wpkit version: 0.0.5
+# wpkit version: 0.0.6
 
 # Vagrantfile API/syntax version. Don't touch unless you know what you're doing!
 VAGRANTFILE_API_VERSION = "2"
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
+  ENV['VAGRANT_DEFAULT_PROVIDER'] = 'virtualbox'
+
   # Configuration options for the VirtualBox provider.
   config.vm.provider :virtualbox do |v|
     v.customize ["modifyvm", :id, "--memory", 1024]
+    v.customize ["modifyvm", :id, "--cpus", 1]
     v.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
     v.customize ["modifyvm", :id, "--natdnsproxy1", "on"]
   end
 
-  # Configuration options for the Parallels provider.
-  config.vm.provider :parallels do |v|
-    v.update_guest_tools = true
-    v.optimize_power_consumption = false
-    v.memory = 1024
-  end
-
-  # Configuration options for the VMware Fusion provider.
-  config.vm.provider :vmware_fusion do |v|
-    v.vmx["memsize"] = "1024"
-    v.vmx["numvcpus"] = "2"
-  end
-
-  # Set a global clone directory, so we can exclude from Time Machine
-  ENV['VAGRANT_VMWARE_CLONE_DIRECTORY'] = '~/.vagrant-machines'
-
   # VM OS - Ubuntu 14.04 x64
   config.vm.box = "ubuntu/trusty64"
-
-  # The Parallels Provider uses a different naming scheme.
-  config.vm.provider :parallels do |v, override|
-    override.vm.box = "parallels/ubuntu-14.04"
-  end
-
-  # The VMware Fusion Provider uses a different naming scheme.
-  config.vm.provider :vmware_fusion do |v, override|
-    override.vm.box = "netsensia/ubuntu-trusty64"
-  end
 
   if Vagrant.has_plugin?("vagrant-cachier")
     # Configure cached packages to be shared between instances of the same base box.
@@ -67,7 +44,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.ssh.forward_agent = true
 
   # VM Hostname & network (with hostsupdater)
-  config.vm.network :private_network, ip: "192.168.3.10"
+  config.vm.network :private_network, ip: "192.168.99.5"
   config.vm.hostname = "wpkit.dev"
 
   # Local Machine Hosts
