@@ -1,13 +1,16 @@
-# wpkit - 0.0.7
+# wpkit
 
-* Author: [Phil Lennon](http://iampjl.co.uk)
-* Source: [github.com/PJL101/wpkit](http://github.com/PJL101/wpkit)
-* Twitter: [@PJL101](http://twitter.com/pjl101)
-* Email: [enquiry@iampjl.co.uk](mailto:enquiry@iampjl.co.uk)
+* Author: [Phil Lennon](http://frontendphil.com)
+* Twitter: [@frontendphil](http://twitter.com/frontendphil)
+* Email: [enquiry@frontendphil.com](mailto:enquiry@frontendphil.com)
 
 -
 
-# NOTE: This project is super early alpha. I'd suggest waiting for the first released version.
+# NOTE: Please use [Lesnar](http://github.com/fephil/lesnar)
+
+Lesnar is a built from scratch development LEMP server and is superior in every way compared to wpkit. This repo is now here for reference only and won't be worked on again.
+
+-
 
 Easy Wordpress Setup with Vagrant, Ansible, Ubuntu 14.04, mySQL, Nginx & PHP 5.5
 
